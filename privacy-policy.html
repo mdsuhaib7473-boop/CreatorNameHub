@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Privacy Policy - CreatorNameHub</title>
+    <meta name="description" content="Privacy Policy for CreatorNameHub. Learn how we collect, use, and protect your personal information when you use our AI-powered name generator tools.">
+    <meta name="author" content="Suhaib - CreatorNameHub Team">
+    <meta name="robots" content="index, follow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --primary-light: #818cf8;
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --accent: #ec4899;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --light-gray: #f1f5f9;
+            --white: #ffffff;
+            --border: #e2e8f0;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+            --shadow-md: 0 8px 32px rgba(0,0,0,0.08);
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s cubic-bezier(0.4,0,0.2,1);
+        }
+        [data-theme="dark"] {
+            --primary: #818cf8;
+            --primary-dark: #6366f1;
+            --primary-gradient: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
+            --dark: #f1f5f9;
+            --gray: #94a3b8;
+            --light-gray: #0f172a;
+            --white: #1e293b;
+            --border: #334155;
+            --shadow-md: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        * { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--white);
+            color: var(--dark);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        body::before {
+            content:'';
+            position:fixed; top:0; left:0; width:100%; height:100%;
+            background: radial-gradient(circle at 20% 80%, rgba(99,102,241,0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(236,72,153,0.05) 0%, transparent 50%);
+            z-index:-1; pointer-events:none;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed; top:0; width:100%;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            transition: all var(--transition-normal);
+        }
+        [data-theme="dark"] nav { background: rgba(15,23,42,0.95); }
+        .nav-container {
+            display:flex; justify-content:space-between; align-items:center;
+            padding: 0.75rem 1.5rem;
+            max-width: 1280px; margin:0 auto;
+        }
+        .logo { display:flex; align-items:center; gap:0.75rem; cursor:pointer; text-decoration:none; }
+        .logo-icon {
+            width:40px; height:40px;
+            background: var(--primary-gradient);
+            border-radius:12px;
+            display:flex; align-items:center; justify-content:center;
+            font-size:1.25rem; font-weight:900; color:white;
+            box-shadow: 0 6px 20px rgba(99,102,241,0.3);
+        }
+        .logo-text {
+            font-family:'Outfit',sans-serif;
+            font-size:1.25rem; font-weight:900;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+        }
+        .nav-actions { display:flex; align-items:center; gap:1rem; }
+        .theme-toggle {
+            width:48px; height:24px;
+            background: var(--light-gray);
+            border-radius:12px; border:none; cursor:pointer; position:relative;
+            transition: background var(--transition-normal);
+        }
+        .theme-toggle::before {
+            content:''; position:absolute; top:2px; left:2px;
+            width:20px; height:20px;
+            background: var(--primary); border-radius:50%;
+            transition: transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+        }
+        [data-theme="dark"] .theme-toggle::before { transform: translateX(24px); }
+        .back-btn {
+            display:inline-flex; align-items:center; gap:0.5rem;
+            padding:0.5rem 1rem; border-radius:50px;
+            background: var(--light-gray); color:var(--dark);
+            font-weight:600; font-size:0.9rem; text-decoration:none;
+            transition: all var(--transition-fast); border:none; cursor:pointer;
+        }
+        .back-btn:hover { background:var(--primary); color:white; }
+
+        /* HERO */
+        .page-hero {
+            padding: 8rem 1.5rem 4rem;
+            text-align:center;
+            background: linear-gradient(180deg, rgba(99,102,241,0.05) 0%, transparent 100%);
+        }
+        .page-hero h1 {
+            font-family:'Outfit',sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight:900;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+            margin-bottom:1rem;
+        }
+        .page-hero p { color:var(--gray); font-size:1.1rem; max-width:600px; margin:0 auto; }
+        .last-updated {
+            display:inline-flex; align-items:center; gap:0.5rem;
+            background: rgba(99,102,241,0.1);
+            color:var(--primary); padding:0.4rem 1rem;
+            border-radius:50px; font-size:0.85rem; font-weight:600;
+            margin-top:1rem;
+        }
+
+        /* CONTENT */
+        .container { max-width:800px; margin:0 auto; padding:0 1.5rem; }
+        .content-wrapper { padding:3rem 0 6rem; }
+        .section-card {
+            background: var(--white);
+            border:1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding:2rem 2.5rem;
+            margin-bottom:1.5rem;
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow var(--transition-normal);
+        }
+        .section-card:hover { box-shadow: var(--shadow-md); }
+        .section-card h2 {
+            font-family:'Outfit',sans-serif;
+            font-size:1.4rem; font-weight:700;
+            color:var(--dark); margin-bottom:1rem;
+            display:flex; align-items:center; gap:0.75rem;
+        }
+        .section-card h2 .icon {
+            width:36px; height:36px;
+            background: linear-gradient(135deg, rgba(99,102,241,0.15) 0%, rgba(236,72,153,0.15) 100%);
+            border-radius:10px;
+            display:flex; align-items:center; justify-content:center;
+            font-size:1rem; color:var(--primary);
+            flex-shrink:0;
+        }
+        .section-card p { color:var(--gray); margin-bottom:0.75rem; font-size:1rem; line-height:1.8; }
+        .section-card p:last-child { margin-bottom:0; }
+        .section-card ul { color:var(--gray); padding-left:1.5rem; }
+        .section-card ul li { margin-bottom:0.5rem; font-size:1rem; line-height:1.7; }
+        .section-card a { color:var(--primary); font-weight:600; }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(99,102,241,0.08) 0%, rgba(236,72,153,0.08) 100%);
+            border:1px solid rgba(99,102,241,0.2);
+            border-radius: var(--radius-md);
+            padding:1.5rem;
+            margin-bottom:1.5rem;
+        }
+        .highlight-box p { color:var(--dark); font-weight:600; margin:0; }
+        .highlight-box span { color:var(--gray); font-weight:400; }
+
+        /* TABLE OF CONTENTS */
+        .toc {
+            background: var(--light-gray);
+            border-radius: var(--radius-md);
+            padding:1.5rem 2rem;
+            margin-bottom:2rem;
+        }
+        .toc h3 { font-family:'Outfit',sans-serif; font-size:1rem; font-weight:700; margin-bottom:0.75rem; color:var(--dark); }
+        .toc ol { padding-left:1.5rem; }
+        .toc li { font-size:0.95rem; margin-bottom:0.35rem; }
+        .toc a { color:var(--primary); font-weight:600; text-decoration:none; }
+        .toc a:hover { text-decoration:underline; }
+
+        /* FOOTER */
+        footer {
+            background: var(--dark);
+            color:rgba(255,255,255,0.7);
+            padding:3rem 1.5rem;
+            text-align:center;
+        }
+        [data-theme="dark"] footer { background: #0a0f1e; }
+        footer .footer-logo { font-family:'Outfit',sans-serif; font-size:1.5rem; font-weight:900; color:white; margin-bottom:1rem; }
+        footer p { font-size:0.9rem; margin-bottom:0.5rem; }
+        footer .footer-links { display:flex; gap:1.5rem; justify-content:center; margin-top:1rem; flex-wrap:wrap; }
+        footer .footer-links a { color:rgba(255,255,255,0.6); text-decoration:none; font-size:0.9rem; font-weight:600; transition:color var(--transition-fast); }
+        footer .footer-links a:hover { color:white; }
+
+        @media(max-width:768px) {
+            .section-card { padding:1.5rem; }
+            .toc { padding:1.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="nav-container">
+        <a class="logo" href="/">
+            <div class="logo-icon">✦</div>
+            <span class="logo-text">CreatorNameHub</span>
+        </a>
+        <div class="nav-actions">
+            <a href="/" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"></button>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+    <h1>Privacy Policy</h1>
+    <p>We respect your privacy. Here's exactly what data we collect, how we use it, and how we protect it.</p>
+    <div class="last-updated"><i class="fas fa-calendar-alt"></i> Last updated: February 2026</div>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+    <div class="content-wrapper">
+
+        <div class="highlight-box">
+            <p>📌 Quick summary: <span>CreatorNameHub is a free tool. We do not sell your data to anyone. We collect minimal data to make the tools work and improve your experience.</span></p>
+        </div>
+
+        <div class="toc">
+            <h3>📋 Table of Contents</h3>
+            <ol>
+                <li><a href="#who-we-are">Who We Are</a></li>
+                <li><a href="#data-collect">What Data We Collect</a></li>
+                <li><a href="#how-we-use">How We Use Your Data</a></li>
+                <li><a href="#cookies">Cookies & Analytics</a></li>
+                <li><a href="#google-adsense">Google AdSense & Advertising</a></li>
+                <li><a href="#third-party">Third Party Services</a></li>
+                <li><a href="#your-rights">Your Rights</a></li>
+                <li><a href="#children">Children's Privacy</a></li>
+                <li><a href="#changes">Changes to This Policy</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ol>
+        </div>
+
+        <div class="section-card" id="who-we-are">
+            <h2><span class="icon"><i class="fas fa-building"></i></span> 1. Who We Are</h2>
+            <p>CreatorNameHub ("we," "us," or "our") is a free online tool created to help creators, entrepreneurs, and businesses generate creative names for their brands, YouTube channels, Instagram profiles, and more.</p>
+            <p>This website is operated by Suhaib and the CreatorNameHub team. If you have any questions about this Privacy Policy, you can contact us at: <a href="mailto:contact@creatornamehub.com">contact@creatornamehub.com</a></p>
+        </div>
+
+        <div class="section-card" id="data-collect">
+            <h2><span class="icon"><i class="fas fa-database"></i></span> 2. What Data We Collect</h2>
+            <p><strong>Data you provide directly:</strong></p>
+            <ul>
+                <li>Keywords and inputs you type into our name generators</li>
+                <li>Your email address (only if you contact us through our contact form)</li>
+                <li>Any messages or feedback you send us</li>
+            </ul>
+            <p><strong>Data collected automatically:</strong></p>
+            <ul>
+                <li>Browser type and version</li>
+                <li>Device type (mobile, desktop, tablet)</li>
+                <li>General geographic location (country/city level — not your exact address)</li>
+                <li>Pages you visit on our website and time spent</li>
+                <li>Referring website (how you found us)</li>
+                <li>IP address (used for security purposes and general analytics only)</li>
+            </ul>
+            <p>We do <strong>not</strong> collect your name, home address, phone number, or payment information. Our tools are completely free and require no account creation.</p>
+        </div>
+
+        <div class="section-card" id="how-we-use">
+            <h2><span class="icon"><i class="fas fa-cog"></i></span> 3. How We Use Your Data</h2>
+            <p>We use the data we collect for the following purposes:</p>
+            <ul>
+                <li><strong>To provide our services:</strong> Your keyword inputs are used solely to generate name suggestions for you. We do not store or share these inputs with third parties.</li>
+                <li><strong>To improve our tools:</strong> Anonymous usage data helps us understand which tools are most popular so we can improve them.</li>
+                <li><strong>To respond to you:</strong> If you contact us via our contact form, we use your email to respond to your message.</li>
+                <li><strong>To serve relevant advertisements:</strong> We use Google AdSense to display ads. Google uses cookies to serve ads based on your browsing behavior (see section 5 below).</li>
+                <li><strong>For security:</strong> IP addresses are used to detect and prevent abuse of our tools.</li>
+            </ul>
+            <p>We will <strong>never</strong> sell, rent, or trade your personal data to any third party for marketing purposes.</p>
+        </div>
+
+        <div class="section-card" id="cookies">
+            <h2><span class="icon"><i class="fas fa-cookie-bite"></i></span> 4. Cookies & Analytics</h2>
+            <p>We use cookies (small text files stored on your device) to:</p>
+            <ul>
+                <li>Remember your theme preference (dark/light mode)</li>
+                <li>Remember your saved names (stored locally on your device, not our servers)</li>
+                <li>Collect anonymous analytics about how visitors use our site (via Google Analytics)</li>
+                <li>Serve relevant ads via Google AdSense</li>
+            </ul>
+            <p>You can control or disable cookies through your browser settings at any time. Note that disabling cookies may affect some features of the website (such as saving your preferred theme).</p>
+            <p>We use <strong>Google Analytics</strong> to understand site traffic. Google Analytics collects data anonymously. You can opt out of Google Analytics by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-Out Browser Add-on</a>.</p>
+        </div>
+
+        <div class="section-card" id="google-adsense">
+            <h2><span class="icon"><i class="fas fa-ad"></i></span> 5. Google AdSense & Advertising</h2>
+            <p>We use <strong>Google AdSense</strong> to display advertisements on our website. Google AdSense uses cookies to display ads that are relevant to you based on your previous visits to this and other websites.</p>
+            <p>Google's use of advertising cookies enables it and its partners to serve ads to you based on your visit to our site and/or other sites on the internet. You can opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google Ads Settings</a>.</p>
+            <p>For more information on how Google collects and uses data, please visit the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</p>
+            <p>Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to our website. We have no access to or control over the cookies that may be used by third-party advertisers.</p>
+        </div>
+
+        <div class="section-card" id="third-party">
+            <h2><span class="icon"><i class="fas fa-link"></i></span> 6. Third Party Services</h2>
+            <p>Our website uses the following third-party services, each with their own privacy policies:</p>
+            <ul>
+                <li><strong>Google Analytics</strong> — Website analytics. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></li>
+                <li><strong>Google AdSense</strong> — Advertising. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></li>
+                <li><strong>Google Fonts</strong> — Typography (no personal data collected). <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a></li>
+                <li><strong>Cloudflare</strong> — CDN and security. <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Privacy Policy</a></li>
+            </ul>
+            <p>Our website may contain links to other websites. We are not responsible for the privacy practices of those external sites and encourage you to review their privacy policies.</p>
+        </div>
+
+        <div class="section-card" id="your-rights">
+            <h2><span class="icon"><i class="fas fa-user-shield"></i></span> 7. Your Rights</h2>
+            <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+            <ul>
+                <li><strong>Right to access:</strong> You can request a copy of the personal data we hold about you.</li>
+                <li><strong>Right to deletion:</strong> You can request that we delete any personal data we hold about you (such as your email if you contacted us).</li>
+                <li><strong>Right to correction:</strong> You can request that we correct any inaccurate data we hold about you.</li>
+                <li><strong>Right to opt out:</strong> You can opt out of personalized advertising at any time through Google's ad settings.</li>
+                <li><strong>GDPR (EU Users):</strong> If you are located in the European Union, you have additional rights under the General Data Protection Regulation.</li>
+                <li><strong>CCPA (California Users):</strong> California residents have additional rights under the California Consumer Privacy Act.</li>
+            </ul>
+            <p>To exercise any of these rights, please contact us at <a href="mailto:contact@creatornamehub.com">contact@creatornamehub.com</a>.</p>
+        </div>
+
+        <div class="section-card" id="children">
+            <h2><span class="icon"><i class="fas fa-child"></i></span> 8. Children's Privacy</h2>
+            <p>CreatorNameHub is not directed to children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, please contact us immediately at <a href="mailto:contact@creatornamehub.com">contact@creatornamehub.com</a> and we will take steps to delete such information.</p>
+        </div>
+
+        <div class="section-card" id="changes">
+            <h2><span class="icon"><i class="fas fa-history"></i></span> 9. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for legal, operational, or regulatory reasons.</p>
+            <p>When we make significant changes, we will update the "Last updated" date at the top of this page. We encourage you to review this Privacy Policy periodically. Continued use of CreatorNameHub after any changes constitutes your acceptance of the updated policy.</p>
+        </div>
+
+        <div class="section-card" id="contact">
+            <h2><span class="icon"><i class="fas fa-envelope"></i></span> 10. Contact Us</h2>
+            <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your personal data, please contact us:</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:contact@creatornamehub.com">contact@creatornamehub.com</a></li>
+                <li><strong>Website:</strong> <a href="https://creatornamehub.com/contact">creatornamehub.com/contact</a></li>
+            </ul>
+            <p>We will respond to all privacy-related inquiries within 30 days.</p>
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-logo">✦ CreatorNameHub</div>
+    <p>Free AI-powered name generators for creators worldwide.</p>
+    <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/about.html">About Us</a>
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
+        <a href="/contact.html">Contact</a>
+    </div>
+    <p style="margin-top:1.5rem; font-size:0.8rem; opacity:0.5;">© 2026 CreatorNameHub. All rights reserved.</p>
+</footer>
+
+<script>
+    function toggleTheme() {
+        const html = document.documentElement;
+        const isDark = html.getAttribute('data-theme') === 'dark';
+        html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+        localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    }
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+</script>
+</body>
+</html>
