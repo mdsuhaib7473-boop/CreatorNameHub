@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>About Us - CreatorNameHub | Our Story & Mission</title>
+    <meta name="description" content="Learn about CreatorNameHub — who we are, why we built these free AI name generator tools, and our mission to help creators worldwide find their perfect brand identity.">
+    <meta name="author" content="Suhaib - CreatorNameHub Team">
+    <meta name="robots" content="index, follow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --primary-light: #818cf8;
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --accent: #ec4899;
+            --success: #10b981;
+            --dark: #0f172a;
+            --gray: #64748b;
+            --light-gray: #f1f5f9;
+            --white: #ffffff;
+            --border: #e2e8f0;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+            --shadow-md: 0 8px 32px rgba(0,0,0,0.08);
+            --shadow-lg: 0 16px 48px rgba(0,0,0,0.12);
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s cubic-bezier(0.4,0,0.2,1);
+        }
+        [data-theme="dark"] {
+            --primary: #818cf8;
+            --primary-dark: #6366f1;
+            --primary-gradient: linear-gradient(135deg, #818cf8 0%, #c084fc 100%);
+            --dark: #f1f5f9;
+            --gray: #94a3b8;
+            --light-gray: #0f172a;
+            --white: #1e293b;
+            --border: #334155;
+            --shadow-md: 0 8px 32px rgba(0,0,0,0.3);
+        }
+        * { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: var(--white); color: var(--dark); line-height:1.6; min-height:100vh;
+        }
+        body::before {
+            content:''; position:fixed; top:0; left:0; width:100%; height:100%;
+            background: radial-gradient(circle at 20% 80%, rgba(99,102,241,0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(236,72,153,0.05) 0%, transparent 50%);
+            z-index:-1; pointer-events:none;
+        }
+
+        /* NAV */
+        nav {
+            position:fixed; top:0; width:100%;
+            background: rgba(255,255,255,0.95); backdrop-filter:blur(20px);
+            border-bottom:1px solid var(--border); z-index:1000;
+            transition: all var(--transition-normal);
+        }
+        [data-theme="dark"] nav { background: rgba(15,23,42,0.95); }
+        .nav-container {
+            display:flex; justify-content:space-between; align-items:center;
+            padding:0.75rem 1.5rem; max-width:1280px; margin:0 auto;
+        }
+        .logo { display:flex; align-items:center; gap:0.75rem; cursor:pointer; text-decoration:none; }
+        .logo-icon {
+            width:40px; height:40px; background:var(--primary-gradient);
+            border-radius:12px; display:flex; align-items:center; justify-content:center;
+            font-size:1.25rem; font-weight:900; color:white;
+            box-shadow:0 6px 20px rgba(99,102,241,0.3);
+        }
+        .logo-text {
+            font-family:'Outfit',sans-serif; font-size:1.25rem; font-weight:900;
+            background:linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+        }
+        .nav-actions { display:flex; align-items:center; gap:1rem; }
+        .theme-toggle {
+            width:48px; height:24px; background:var(--light-gray);
+            border-radius:12px; border:none; cursor:pointer; position:relative;
+            transition:background var(--transition-normal);
+        }
+        .theme-toggle::before {
+            content:''; position:absolute; top:2px; left:2px;
+            width:20px; height:20px; background:var(--primary); border-radius:50%;
+            transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1);
+        }
+        [data-theme="dark"] .theme-toggle::before { transform:translateX(24px); }
+        .back-btn {
+            display:inline-flex; align-items:center; gap:0.5rem;
+            padding:0.5rem 1rem; border-radius:50px;
+            background:var(--light-gray); color:var(--dark);
+            font-weight:600; font-size:0.9rem; text-decoration:none;
+            transition:all var(--transition-fast); border:none; cursor:pointer;
+        }
+        .back-btn:hover { background:var(--primary); color:white; }
+
+        /* HERO */
+        .page-hero {
+            padding:8rem 1.5rem 5rem; text-align:center;
+            background:linear-gradient(180deg, rgba(99,102,241,0.05) 0%, transparent 100%);
+        }
+        .hero-badge {
+            display:inline-flex; align-items:center; gap:0.5rem;
+            background:rgba(99,102,241,0.1); color:var(--primary);
+            padding:0.5rem 1.25rem; border-radius:50px;
+            font-size:0.9rem; font-weight:600; margin-bottom:1.5rem;
+        }
+        .page-hero h1 {
+            font-family:'Outfit',sans-serif;
+            font-size:clamp(2.5rem, 5vw, 4rem); font-weight:900;
+            background:linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+            margin-bottom:1rem; line-height:1.15;
+        }
+        .page-hero p { color:var(--gray); font-size:1.2rem; max-width:650px; margin:0 auto 2rem; }
+
+        /* STATS */
+        .stats-row {
+            display:flex; gap:1.5rem; justify-content:center; flex-wrap:wrap;
+            margin-bottom:4rem;
+        }
+        .stat-item {
+            background:var(--white); border:1px solid var(--border);
+            border-radius:var(--radius-md); padding:1.5rem 2rem; text-align:center;
+            box-shadow:var(--shadow-sm); min-width:150px;
+        }
+        .stat-number {
+            font-family:'Outfit',sans-serif; font-size:2rem; font-weight:900;
+            background:linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+        }
+        .stat-label { color:var(--gray); font-size:0.9rem; font-weight:600; margin-top:0.25rem; }
+
+        /* CONTENT */
+        .container { max-width:1100px; margin:0 auto; padding:0 1.5rem; }
+        .content-section { padding:0 0 5rem; }
+
+        /* STORY */
+        .story-grid {
+            display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;
+            margin-bottom:5rem;
+        }
+        @media(max-width:768px) { .story-grid { grid-template-columns:1fr; gap:2rem; } }
+        .story-image {
+            border-radius:var(--radius-lg); overflow:hidden;
+            background:linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            aspect-ratio:4/3; display:flex; align-items:center; justify-content:center;
+            font-size:6rem;
+        }
+        .story-text h2 {
+            font-family:'Outfit',sans-serif; font-size:2.2rem; font-weight:900;
+            margin-bottom:1.5rem; color:var(--dark);
+        }
+        .story-text p { color:var(--gray); font-size:1.05rem; line-height:1.8; margin-bottom:1rem; }
+
+        /* MISSION */
+        .mission-card {
+            background:linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius:var(--radius-xl, 32px); padding:4rem;
+            text-align:center; color:white; margin-bottom:5rem;
+        }
+        .mission-card h2 { font-family:'Outfit',sans-serif; font-size:2rem; font-weight:900; margin-bottom:1rem; -webkit-text-fill-color:white; background:none; }
+        .mission-card p { font-size:1.2rem; opacity:0.9; max-width:700px; margin:0 auto; line-height:1.8; }
+        @media(max-width:768px) { .mission-card { padding:2.5rem 1.5rem; } }
+
+        /* TOOLS GRID */
+        .tools-grid {
+            display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+            gap:1.25rem; margin-bottom:5rem;
+        }
+        .tool-card {
+            background:var(--white); border:1px solid var(--border);
+            border-radius:var(--radius-md); padding:1.5rem;
+            text-align:center; transition:all var(--transition-normal);
+            box-shadow:var(--shadow-sm);
+        }
+        .tool-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); border-color:var(--primary); }
+        .tool-icon {
+            width:56px; height:56px; border-radius:14px;
+            display:flex; align-items:center; justify-content:center;
+            font-size:1.5rem; margin:0 auto 1rem;
+        }
+        .tool-card h3 { font-family:'Outfit',sans-serif; font-size:1rem; font-weight:700; margin-bottom:0.4rem; color:var(--dark); }
+        .tool-card p { font-size:0.875rem; color:var(--gray); }
+
+        /* TEAM */
+        .team-section { text-align:center; margin-bottom:5rem; }
+        .team-section h2 { font-family:'Outfit',sans-serif; font-size:2rem; font-weight:900; margin-bottom:0.75rem; }
+        .team-section .subtitle { color:var(--gray); font-size:1.05rem; margin-bottom:3rem; }
+        .founder-card {
+            max-width:450px; margin:0 auto;
+            background:var(--white); border:1px solid var(--border);
+            border-radius:var(--radius-lg); padding:2.5rem;
+            box-shadow:var(--shadow-md); text-align:center;
+        }
+        .founder-avatar {
+            width:100px; height:100px; border-radius:50%;
+            background:linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            display:flex; align-items:center; justify-content:center;
+            font-size:2.5rem; margin:0 auto 1.25rem;
+            box-shadow:0 8px 24px rgba(99,102,241,0.3);
+        }
+        .founder-name { font-family:'Outfit',sans-serif; font-size:1.5rem; font-weight:800; margin-bottom:0.25rem; }
+        .founder-role {
+            display:inline-block; background:rgba(99,102,241,0.1);
+            color:var(--primary); padding:0.3rem 1rem; border-radius:50px;
+            font-size:0.875rem; font-weight:600; margin-bottom:1rem;
+        }
+        .founder-bio { color:var(--gray); font-size:0.95rem; line-height:1.7; margin-bottom:1.25rem; }
+        .founder-links { display:flex; gap:0.75rem; justify-content:center; }
+        .founder-links a {
+            width:40px; height:40px; border-radius:50%;
+            background:var(--light-gray); display:flex; align-items:center; justify-content:center;
+            color:var(--gray); text-decoration:none; font-size:1rem;
+            transition:all var(--transition-fast);
+        }
+        .founder-links a:hover { background:var(--primary); color:white; }
+
+        /* VALUES */
+        .values-grid {
+            display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+            gap:1.25rem; margin-bottom:5rem;
+        }
+        .value-card {
+            background:var(--white); border:1px solid var(--border);
+            border-radius:var(--radius-md); padding:1.75rem;
+            box-shadow:var(--shadow-sm);
+        }
+        .value-icon { font-size:2rem; margin-bottom:0.75rem; }
+        .value-card h3 { font-family:'Outfit',sans-serif; font-size:1.15rem; font-weight:700; margin-bottom:0.5rem; }
+        .value-card p { color:var(--gray); font-size:0.95rem; line-height:1.7; }
+
+        /* CTA */
+        .cta-section {
+            text-align:center; padding:4rem 1.5rem;
+            background:var(--light-gray); border-radius:var(--radius-lg); margin-bottom:2rem;
+        }
+        .cta-section h2 { font-family:'Outfit',sans-serif; font-size:2rem; font-weight:900; margin-bottom:1rem; }
+        .cta-section p { color:var(--gray); margin-bottom:2rem; font-size:1.05rem; }
+        .btn-primary {
+            display:inline-flex; align-items:center; gap:0.5rem;
+            padding:1rem 2rem; border-radius:var(--radius-md);
+            background:linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color:white; font-weight:700; font-size:1rem; text-decoration:none;
+            transition:all var(--transition-normal);
+            box-shadow:0 8px 24px rgba(99,102,241,0.3);
+        }
+        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 12px 32px rgba(99,102,241,0.4); }
+
+        /* SECTION TITLES */
+        .section-title { text-align:center; margin-bottom:3rem; }
+        .section-title h2 { font-family:'Outfit',sans-serif; font-size:2rem; font-weight:900; margin-bottom:0.5rem; }
+        .section-title p { color:var(--gray); font-size:1rem; }
+
+        /* FOOTER */
+        footer { background:var(--dark); color:rgba(255,255,255,0.7); padding:3rem 1.5rem; text-align:center; }
+        [data-theme="dark"] footer { background:#0a0f1e; }
+        footer .footer-logo { font-family:'Outfit',sans-serif; font-size:1.5rem; font-weight:900; color:white; margin-bottom:1rem; }
+        footer p { font-size:0.9rem; margin-bottom:0.5rem; }
+        footer .footer-links { display:flex; gap:1.5rem; justify-content:center; margin-top:1rem; flex-wrap:wrap; }
+        footer .footer-links a { color:rgba(255,255,255,0.6); text-decoration:none; font-size:0.9rem; font-weight:600; transition:color var(--transition-fast); }
+        footer .footer-links a:hover { color:white; }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <div class="nav-container">
+        <a class="logo" href="/">
+            <div class="logo-icon">✦</div>
+            <span class="logo-text">CreatorNameHub</span>
+        </a>
+        <div class="nav-actions">
+            <a href="/" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode"></button>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+    <div class="hero-badge">✦ Our Story</div>
+    <h1>We Help Creators Find<br>Their Perfect Name</h1>
+    <p>CreatorNameHub was built by a creator, for creators — because we know how hard it is to find a name that feels right.</p>
+</div>
+
+<!-- STATS -->
+<div class="container">
+    <div class="stats-row">
+        <div class="stat-item">
+            <div class="stat-number">50K+</div>
+            <div class="stat-label">Names Generated</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">6</div>
+            <div class="stat-label">Free Tools</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">150+</div>
+            <div class="stat-label">Countries Reached</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Free Forever</div>
+        </div>
+    </div>
+
+    <div class="content-section">
+
+        <!-- STORY -->
+        <div class="story-grid">
+            <div class="story-image">🚀</div>
+            <div class="story-text">
+                <h2>How It All Started</h2>
+                <p>It started with a simple problem. When I was trying to start my YouTube channel, I spent hours — no, days — trying to come up with the perfect name. Every idea I had was either already taken, too generic, or just didn't feel right.</p>
+                <p>I tried name generators that existed at the time, but they either gave random words mashed together or charged for the good suggestions. That frustrated me. A good name shouldn't be behind a paywall.</p>
+                <p>So I built CreatorNameHub — a completely free tool that gives you genuinely useful, creative name ideas in seconds. No sign-up, no payment, no limits. Just great names.</p>
+            </div>
+        </div>
+
+        <!-- MISSION -->
+        <div class="mission-card">
+            <h2>Our Mission</h2>
+            <p>To give every creator, entrepreneur, and small business owner — regardless of budget — access to professional-quality naming tools that help them build a brand identity they're proud of.</p>
+        </div>
+
+        <!-- TOOLS -->
+        <div class="section-title">
+            <h2>Our Free Tools</h2>
+            <p>Everything you need to build your brand identity, in one place.</p>
+        </div>
+        <div class="tools-grid">
+            <div class="tool-card">
+                <div class="tool-icon" style="background:rgba(99,102,241,0.1);">🏢</div>
+                <h3>Business Name Generator</h3>
+                <p>Creative names for any industry</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon" style="background:rgba(239,68,68,0.1);">▶️</div>
+                <h3>YouTube Name Generator</h3>
+                <p>Channel names that get subscribers</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon" style="background:rgba(236,72,153,0.1);">📸</div>
+                <h3>Instagram Bio Generator</h3>
+                <p>Bios that convert visitors to followers</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon" style="background:rgba(16,185,129,0.1);">@</div>
+                <h3>Username Generator</h3>
+                <p>Unique usernames across platforms</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon" style="background:rgba(245,158,11,0.1);">✅</div>
+                <h3>Username Checker</h3>
+                <p>Check availability instantly</p>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon" style="background:rgba(139,92,246,0.1);">✍️</div>
+                <h3>Blog Name Generator</h3>
+                <p>Names that readers remember</p>
+            </div>
+        </div>
+
+        <!-- TEAM -->
+        <div class="team-section">
+            <h2>Meet the Founder</h2>
+            <p class="subtitle">The person behind CreatorNameHub</p>
+            <div class="founder-card">
+                <div class="founder-avatar">👨‍💻</div>
+                <div class="founder-name">Suhaib</div>
+                <div class="founder-role">Founder & Developer</div>
+                <p class="founder-bio">Creator, developer, and someone who spent way too long trying to name things. I built CreatorNameHub to solve the naming problem once and for all — giving everyone access to professional tools for free. I believe that a great name can change the trajectory of a brand, and no one should miss out because they can't afford expensive tools.</p>
+                <div class="founder-links">
+                    <a href="mailto:contact@creatornamehub.com" title="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- VALUES -->
+        <div class="section-title">
+            <h2>What We Believe In</h2>
+            <p>The principles that guide how we build CreatorNameHub</p>
+        </div>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">🆓</div>
+                <h3>Free Forever</h3>
+                <p>Our core tools will always be free. Great naming shouldn't be a privilege for those who can afford expensive consultants or agencies.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🎯</div>
+                <h3>Quality Over Quantity</h3>
+                <p>We'd rather give you 10 genuinely great name ideas than 100 mediocre ones. Every suggestion should be something you'd actually consider.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🌍</div>
+                <h3>Built for Everyone</h3>
+                <p>Whether you're a student starting a YouTube channel or an entrepreneur launching a startup, our tools are built to help you — no experience needed.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🔒</div>
+                <h3>Privacy First</h3>
+                <p>We don't store your inputs or sell your data. What you type into our tools stays between you and the tool. Period.</p>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta-section">
+            <h2>Ready to Find Your Perfect Name?</h2>
+            <p>Join thousands of creators who've used CreatorNameHub to find their brand identity.</p>
+            <a href="/" class="btn-primary"><i class="fas fa-magic"></i> Start Generating for Free</a>
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-logo">✦ CreatorNameHub</div>
+    <p>Free AI-powered name generators for creators worldwide.</p>
+    <div class="footer-links">
+        <a href="/">Home</a>
+        <a href="/about.html">About Us</a>
+        <a href="/privacy-policy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
+        <a href="/contact.html">Contact</a>
+    </div>
+    <p style="margin-top:1.5rem; font-size:0.8rem; opacity:0.5;">© 2026 CreatorNameHub. All rights reserved.</p>
+</footer>
+
+<script>
+    function toggleTheme() {
+        const html = document.documentElement;
+        const isDark = html.getAttribute('data-theme') === 'dark';
+        html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+        localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    }
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+</script>
+</body>
+</html>
